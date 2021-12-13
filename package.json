@@ -1,5 +1,5 @@
 {
-    "name": "royex-live",
+    "name": "calling-component",
     "version": "1.0.6",
     "description": "Royex authorized video conference application with WebRTC",
     "main": "app.js",
