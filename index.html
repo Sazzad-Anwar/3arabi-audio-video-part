@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+
+        <!-- material icon -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+        <link rel="stylesheet" href="./assets/css/global.css" />
+
+        <!-- all js files -->
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            referrerpolicy="no-referrer"
+        ></script>
+
+        <!-- socket connection js -->
+        <script defer src="/socket.io/socket.io.js"></script>
+
+        <!-- webRTC functionality -->
+        <script defer type="module" src="/assets/js/rtc.js"></script>
+
+        <!-- custom event handlers -->
+        <script defer type="module" src="/assets/js/events.js"></script>
+
+        <!-- webRTC adapter -->
+        <script
+            defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/7.3.0/adapter.min.js"
+            integrity="sha256-2qQheewaqnZlXJ3RJRghVUwD/3fD9HNqxh4C+zvgmF4="
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- moment js -->
+        <script
+            defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+        ></script>
+
+        <!-- file saver js -->
+        <script
+            defer
+            src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"
+        ></script>
+
+        <!-- cross site scripting filter js -->
+        <script
+            defer
+            src="https://cdn.rawgit.com/yahoo/xss-filters/master/dist/xss-filters.js"
+        ></script>
+        <script defer src="/assets/js/autolink.js"></script>
+
+        <!-- main js -->
+        <script defer src="/assets/js/main.js"></script>
+
+        <title>Royex Live</title>
+    </head>
+
+    <body>
+        <!-- home page -->
+        <!-- room created page -->
+        <!-- join into a room page -->
+        <!-- meeting room page -->
+        <div class="bg-black pb-5 full-height room-comm" hidden>
+            <section class="mainBody bg-white row">
+                <div class="col-12 p-0">
+                    <div class="video-portion" id="videos">
+                        <div class="video local d-flex">
+                            <video class="remote-video" id="local" autoplay muted></video>
+                            <div class="static-view invisible text-center" id="local-static-view">
+                                <i class="material-icons hover-shadow text-white">
+                                    person_outline
+                                </i>
+                                <p class="text-white">You</p>
+                            </div>
+                            <div class="video-details">
+                                <i
+                                    class="
+                                        material-icons
+                                        fs-7
+                                        hover-shadow
+                                        text-white
+                                        expand-remote-video
+                                    "
+                                    >crop_free</i
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fixed-bottom d-flex justify-content-center align-items-center">
+                <ul
+                    class="
+                        bg-black
+                        border
+                        rounded-pill
+                        border-light
+                        d-flex
+                        mx-auto
+                        align-items-center
+                    "
+                    style="list-style: none; padding: 0px"
+                >
+                    <li>
+                        <div
+                            class="
+                                nav-link
+                                text-center
+                                px-4
+                                mic
+                                d-flex
+                                flex-column
+                                justify-content-between
+                                align-items-center
+                                cursor-pointer
+                            "
+                            id="toggle-mute"
+                        >
+                            <div class="hover-scale">
+                                <i class="material-icons fs-7 hover-shadow text-white">mic_none</i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            class="
+                                nav-link
+                                text-center
+                                px-4
+                                mic
+                                d-flex
+                                flex-column
+                                justify-content-between
+                                align-items-center
+                                cursor-pointer
+                            "
+                            id="toggle-video"
+                        >
+                            <div class="hover-scale">
+                                <i class="material-icons fs-7 hover-shadow text-white">videocam</i>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div
+                            class="
+                                nav-link
+                                text-center
+                                px-4
+                                share
+                                d-flex
+                                flex-column
+                                justify-content-between
+                                align-items-center
+                                cursor-pointer
+                            "
+                            id="share-screen"
+                        >
+                            <div class="hover-scale">
+                                <i class="material-icons fs-7 hover-shadow text-white">
+                                    filter_none
+                                </i>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- footer -->
+    </body>
+</html>
